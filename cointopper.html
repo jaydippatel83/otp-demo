@@ -1,0 +1,1349 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Cointopper</title>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.9.1/jquery.tablesorter.min.js"></script>
+     
+<!--
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>			
+-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--     <script src="js/jquery.tablesorter.min.js"></script>   -->
+    <style>
+        @media screen and (min-width:703px) {
+            .nav-link{
+                font-size: 14px;
+            }
+        }
+        @media screen and (max-width:700px){
+            .srcusd{
+                width: 100%;
+            }
+            .usd{
+                width
+                    40%;
+            }
+            .src{
+                width:80%; 
+            }
+            .crncytxt{
+                width: 100%;
+            }
+            .hide{
+                display: none;
+            }
+            
+        }
+        .btncmr{
+           display: none;
+            background-color: #eee;
+            padding: 4px 6px;
+            border-radius: 50%;
+            cursor: pointer;
+            text-align: center;
+
+        }
+        .btnstr{
+            display: none;
+            background-color: #eee;
+            padding: 4px 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            text-align: center;
+
+        }
+        .thover:hover .star {
+          display: inline-block;
+          text-align: center;   
+
+        }
+        .thover:hover .t-hide{
+            display: none;
+        }
+        .carousel-indicators li {
+            border-radius: 12px;
+            width: 12px;
+            height: 12px;
+            background-color: #404040;
+        }
+        .carousel-indicators li:hover {
+            background-color: darkgray;
+        }
+    </style>
+    <script>
+         ('.thover').hover(
+              function () {
+                $('.star').show();
+              }, 
+              function () {
+                $('.t-hied').hide();
+              }
+            );
+    </script>
+    
+<script>
+        $(function(){
+          $("#myDummyTable").tablesorter();
+        });
+</script>
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-md navbar-light  font-weight-bold p-3">
+          <a class="navbar-brand ml-4" href="#"><img src="img/logo.jpg" width="180" height="40"></a>
+          <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav  ml-auto m-3 mr-5 link">
+              <li class="nav-item active " >
+                <a class="nav-link  text-light font-weight-bold rounded p-2 pl-4 pr-4 mr-3" style="background: linear-gradient(to right,#1c60b8 1%,#3c99dd 100%);" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link font-weight-bold mr-3" href="#">ICOs</a>
+              </li>
+              <li class="nav-item  ">
+                <a class="nav-link font-weight-bold mr-3" href="#">Airdrops</a>
+              </li>
+              <li class="nav-item  ">
+                <a class="nav-link  font-weight-bold mr-3" href="#">News</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link   font-weight-bold mr-3" href="#">Guides</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  font-weight-bold mr-3" href="#">Hire Experts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  font-weight-bold mr-3" href="#">Login</a>
+              </li>
+            </ul>
+
+          </div>
+        </nav>
+ <section style="background: linear-gradient(to right,#1c60b8 1%,#3c99dd 100%);">
+    <div class="container">
+        <div class="row p-3 text-center">
+            <div class="col-lg-2 col-md-2 d-sm-none d-none d-md-block">
+                <h6 class="text-white my-auto">BTC/USD</h6>
+                <span class="text-white" id="bitcoin-head">$3,559.38</span>
+            </div>
+            <div class="col-lg-2 col-md-3 d-sm-none d-none d-md-block">
+                <h6 class="text-white my-auto">Cryptocurrencies</h6>
+                <span class="text-white"> 1554</span>
+            </div>
+            <div class="col-lg-3 col-md-2 col-sm-4 col-4">
+                <h6 class="text-white my-auto">24h volume</h6>
+                <span class="text-white"> $16.7 B</span>
+            </div>
+            <div class="col-lg- col-md-2 col-sm-4 col-4 ">
+                <h6 class="text-white my-auto">Coin M.Cap</h6>
+                <span class="text-white"> $56.6 B</span>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-4 col-4">
+                <h6 class="text-white my-auto">Total M.Cap</h6>
+                <span class="text-white"> $119.5 B</span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="mt-5">
+      <div class="container">
+          <div class="row">
+              <div class="col">
+                   <h2 class="text-dark font-weight-bold float-left">Top Viewed</h2>
+                   <a href="" class="float-right"> 
+                   <button type="button" class="btn btn-secondary">View All</button>
+                   </a>
+              </div>
+          </div>
+      </div>
+</section>
+<section class="mt-3 pb-3">
+    <div class="container">
+     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+       <ol class="carousel-indicators" style="margin-bottom:-30px;">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="0"></li>
+      </ol>
+        <div class="carousel-inner d-flex justify-content-around">
+         <div class="carousel-item active">
+          <div class="row">
+            <div class="col">
+             <ul class="d-flex list-unstyled mx-auto" style="overflow-x:hidden;">
+                <div class="col-lg-2 col-md-4 col-sm-4   my-auto text-white font-weight-bold" style="padding-left:0%;" >
+                   <li class="p-2" style="border-radius: 10px;background: linear-gradient(to right,#353638 10%,#1a80ed 90%);
+                      line-height:1;">
+                    <h6 class="mx-auto my-auto">Bitcoin</h6>
+                    <h4 class="mx-auto my-auto">$0.0053</h4>
+                   <span class=""><img src="img/bitcoin.png" class="float-right " style="background-color:lightblue; border-radius:50%;margin-top:-14px;" width="33" height="33"></span> 
+                    <p class="mx-auto mb-2 my-auto"><img src="html/images/down_arrow.png" width="14" height="14">-0.23%</p>
+                 </li>
+                 </div>
+                 <div class="col-lg-2 col-md-4 col-sm-4   my-auto text-white font-weight-bold" style="padding-left:0%;">
+                   <li class="p-2" style="border-radius: 10px;background: linear-gradient(to right,#b2a7a7 10%,#3a7382 50%);
+                      line-height:1;">
+                    <h6 class="mx-auto my-auto">TRON</h6>
+                    <h4 class="mx-auto my-auto">$0.0053</h4>
+                    <img src="img/tron.png" class="float-right mx-auto" style="background-color:lightblue;border-radius:50%;margin-top:-14px;" width="33" height="33">
+                    <p class="mx-auto mb-2 my-auto"><img src="html/images/down_arrow.png" width="14" height="14">-0.23%</p>
+                 </li>
+                 </div>
+                 <div class="col-lg-2 col-md-4 col-sm-4 d-none d-sm-block my-auto text-white font-weight-bold"  style="padding-left:0%;">
+                   <li class="p-2" style="border-radius: 10px;background: linear-gradient(to right,#D64700 20%,#D60000 50%);
+                      line-height:1;">
+                    <h6 class="mx-auto my-auto">Cardano</h6>
+                    <h4 class="mx-auto my-auto">$0.0053</h4>
+                    <img src="img/cardano.png" class="float-right" style="background-color:lightblue;border-radius:50%;margin-top:-14px;" width="33" height="33">
+                    <p class="mx-auto my-auto mb-2"><img src="html/images/down_arrow.png" width="14" height="14">-0.23%</p>
+                 </li>
+                 </div>
+                 <div class="col-lg-2 d-none d-md-none d-sm-none d-lg-block my-auto text-white font-weight-bold" style="padding-left:0%;" >
+                   <li class="p-2" style="border-radius: 10px;background: linear-gradient(to right,#6542FF 10%,#2300BD 50%);
+                      line-height:1;">
+                    <h6 class="mx-auto my-auto">Zcash</h6>
+                    <h4 class="mx-auto my-auto">$0.0053</h4>
+                    <img src="img/zcash.png" class="float-right bg-white" style="background-color:lightblue;border-radius:50%;margin-top:-14px;" width="33" height="33">
+                    <p class="mx-auto my-auto mb-2"><img src="html/images/down_arrow.png" width="14" height="14">-0.23%</p>
+                 </li>
+                 </div>
+                 <div class="col-lg-2 d-none d-md-none d-sm-none d-lg-block my-auto text-white font-weight-bold" style="padding-left:0%;" >
+                   <li class="p-2" style="border-radius: 10px;background: linear-gradient(to right,#FFC457 10%,#FFBD42 90%);
+                      line-height:1;">
+                    <h6 class="mx-auto my-auto">Icon</h6>
+                    <h4 class="mx-auto my-auto">$0.0053</h4>
+                    <img src="img/icon.png" class="float-right bg-success p-1" style="border-radius:50%;margin-top:-14px;" width="33" height="33">
+                    <p class="mx-auto my-auto mb-2"><img src="html/images/down_arrow.png" width="14" height="14">-0.23%</p>
+                 </li>
+                 </div>
+                 <div class="col-lg-2 d-none d-md-none d-sm-none d-lg-block my-auto text-white font-weight-bold" style="padding-left:0%;">
+                   <li class="p-2" style="border-radius: 10px;background: linear-gradient(to right,#464b4c 10%,#10d3ed 90%);
+                       line-height:1;">
+                    <h6 class="mx-auto my-auto">Nano</h6>
+                    <h4 class="mx-auto my-auto">$0.0053</h4>
+                    <img src="img/nano.png" class="float-right bg-white" style="border-radius:50%;margin-top:-14px;"  width="33" height="33">
+                    <p class="mx-auto my-auto mb-2"><img src="html/images/down_arrow.png" width="14" height="14">-0.23%</p>
+                 </li>
+                 </div>
+                </ul> 
+            </div>
+        </div>
+     </div> 
+         <div class="carousel-item  ">
+          <div class="row">
+            <div class="col">
+             <ul class="d-flex list-unstyled mx-auto" style="overflow-x:hidden;">
+                <div class="col-lg-2 col-md-4 col-sm-4   my-auto text-white font-weight-bold"  style="padding-left:0%;">
+                   <li class="p-2" style="border-radius: 10px;background: linear-gradient(to right,#353638 10%,#1a80ed 90%);
+                      line-height:1;">
+                    <h6 class="mx-auto my-auto">Bitcoin</h6>
+                    <h4 class="mx-auto my-auto">$0.0053</h4>
+                   <span class=""><img src="img/bitcoin.png" class="float-right " style="background-color:lightblue; border-radius:50%;margin-top:-14px;" width="33" height="33"></span> 
+                    <p class="mx-auto mb-2 my-auto"><img src="html/images/down_arrow.png" width="14" height="14">-0.23%</p>
+                 </li>
+                 </div>
+                 <div class="col-lg-2 col-md-4 col-sm-4   my-auto text-white font-weight-bold"style="padding-left:0%;" >
+                   <li class="p-2" style="border-radius: 10px;background: linear-gradient(to right,#b2a7a7 10%,#3a7382 50%);
+                      line-height:1;">
+                    <h6 class="mx-auto my-auto">TRON</h6>
+                    <h4 class="mx-auto my-auto">$0.0053</h4>
+                    <img src="img/tron.png" class="float-right mx-auto" style="background-color:lightblue;border-radius:50%;margin-top:-14px;" width="33" height="33">
+                       <p class="mx-auto mb-2 my-auto"><img src="html/images/down_arrow.png" width="14" height="14">-0.23% </p>
+                 </li>
+                 </div>
+                 <div class="col-lg-2 col-md-4 col-sm-4 d-none d-sm-block my-auto text-white font-weight-bold"  style="padding-left:0%;">
+                   <li class="p-2" style="border-radius: 10px;background: linear-gradient(to right,#D64700 20%,#D60000 50%);
+                      line-height:1;">
+                    <h6 class="mx-auto my-auto">Cardano</h6>
+                    <h4 class="mx-auto my-auto">$0.0053</h4>
+                    <img src="img/cardano.png" class="float-right" style="background-color:lightblue;border-radius:50%;margin-top:-14px;" width="33" height="33">
+                    <p class="mx-auto my-auto mb-2"><img src="html/images/down_arrow.png" width="14" height="14">-0.23%</p>
+                 </li>
+                 </div>
+                 <div class="col-lg-2 d-none d-md-none d-sm-none d-lg-block my-auto text-white font-weight-bold" style="padding-left:0%;" >
+                   <li class="p-2" style="border-radius: 10px;background: linear-gradient(to right,#6542FF 10%,#2300BD 50%);
+                      line-height:1;">
+                    <h6 class="mx-auto my-auto">Zcash</h6>
+                    <h4 class="mx-auto my-auto">$0.0053</h4>
+                    <img src="img/zcash.png" class="float-right bg-white" style="background-color:lightblue;border-radius:50%;margin-top:-14px;" width="33" height="33">
+                    <p class="mx-auto my-auto mb-2"><img src="html/images/down_arrow.png" width="14" height="14">-0.23%</p>
+                 </li>
+                 </div>
+                 <div class="col-lg-2 d-none d-md-none d-sm-none d-lg-block my-auto text-white font-weight-bold"  style="padding-left:0%;">
+                   <li class="p-2" style="border-radius: 10px;background: linear-gradient(to right,#FFC457 10%,#FFBD42 90%);
+                      line-height:1;">
+                    <h6 class="mx-auto my-auto">Icon</h6>
+                    <h4 class="mx-auto my-auto">$0.0053</h4>
+                    <img src="img/icon.png" class="float-right bg-success p-1" style="border-radius:50%;margin-top:-14px;" width="33" height="33">
+                    <p class="mx-auto my-auto mb-2"><img src="html/images/down_arrow.png" width="14" height="14">-0.23%</p>
+                 </li>
+                 </div>
+                 <div class="col-lg-2 d-none d-md-none d-sm-none d-lg-block my-auto text-white font-weight-bold" style="padding-left:0%;" >
+                   <li class="p-2" style="border-radius: 10px;background: linear-gradient(to right,#464b4c 10%,#10d3ed 90%);
+                       line-height:1;">
+                    <h6 class="mx-auto my-auto">Nano</h6>
+                    <h4 class="mx-auto my-auto">$0.0053</h4>
+                    <img src="img/nano.png" class="float-right bg-white" style="border-radius:50%;margin-top:-14px;"  width="33" height="33">
+                    <p class="mx-auto my-auto mb-2"><img src="html/images/down_arrow.png" width="14" height="14">-0.23%</p>
+                 </li>
+                 </div>
+                </ul> 
+            </div>
+        </div>
+     </div> 
+         <div class="carousel-item  ">
+          <div class="row">
+            <div class="col">
+             <ul class="d-flex list-unstyled mx-auto" style="overflow-x:hidden;">
+                <div class="col-lg-2 col-md-4 col-sm-4   my-auto text-white font-weight-bold" style="padding-left:0%;" >
+                   <li class="p-2" style="border-radius: 10px;background: linear-gradient(to right,#353638 10%,#1a80ed 90%);
+                      line-height:1;">
+                    <h6 class="mx-auto my-auto">Bitcoin</h6>
+                    <h4 class="mx-auto my-auto">$0.0053</h4>
+                   <span class=""><img src="img/bitcoin.png" class="float-right " style="background-color:lightblue; border-radius:50%;margin-top:-14px;" width="33" height="33"></span> 
+                    <p class="mx-auto mb-2 my-auto"><img src="html/images/down_arrow.png" width="14" height="14">-0.23%</p>
+                 </li>
+                 </div>
+                 <div class="col-lg-2 col-md-4 col-sm-4   my-auto text-white font-weight-bold" style="padding-left:0%;" >
+                   <li class="p-2" style="border-radius: 10px;background: linear-gradient(to right,#b2a7a7 10%,#3a7382 50%);
+                      line-height:1;">
+                    <h6 class="mx-auto my-auto">TRON</h6>
+                    <h4 class="mx-auto my-auto">$0.0053</h4>
+                    <img src="img/tron.png" class="float-right mx-auto" style="background-color:lightblue;border-radius:50%;margin-top:-14px;" width="33" height="33">
+                    <p class="mx-auto mb-2 my-auto"><img src="html/images/down_arrow.png" width="14" height="14">-0.23%</p>
+                 </li>
+                 </div>
+                 <div class="col-lg-2 col-md-4 col-sm-4 d-none d-sm-block my-auto text-white font-weight-bold"  style="padding-left:0%;">
+                   <li class="p-2" style="border-radius: 10px;background: linear-gradient(to right,#D64700 20%,#D60000 50%);
+                      line-height:1;">
+                    <h6 class="mx-auto my-auto">Cardano</h6>
+                    <h4 class="mx-auto my-auto">$0.0053</h4>
+                    <img src="img/cardano.png" class="float-right" style="background-color:lightblue;border-radius:50%;margin-top:-14px;" width="33" height="33">
+                    <p class="mx-auto my-auto mb-2"><img src="html/images/down_arrow.png" width="14" height="14">-0.23%</p>
+                 </li>
+                 </div>
+                 <div class="col-lg-2 d-none d-md-none d-sm-none d-lg-block my-auto text-white font-weight-bold" style="padding-left:0%;" >
+                   <li class="p-2" style="border-radius: 10px;background: linear-gradient(to right,#6542FF 10%,#2300BD 50%);
+                      line-height:1;">
+                    <h6 class="mx-auto my-auto">Zcash</h6>
+                    <h4 class="mx-auto my-auto">$0.0053</h4>
+                    <img src="img/zcash.png" class="float-right bg-white" style="background-color:lightblue;border-radius:50%;margin-top:-14px;" width="33" height="33">
+                    <p class="mx-auto my-auto mb-2"><img src="html/images/down_arrow.png" width="14" height="14">-0.23%</p>
+                 </li>
+                 </div>
+                 <div class="col-lg-2 d-none d-md-none d-sm-none d-lg-block my-auto text-white font-weight-bold"  style="padding-left:0%;">
+                   <li class="p-2" style="border-radius: 10px;background: linear-gradient(to right,#FFC457 10%,#FFBD42 90%);
+                      line-height:1;">
+                    <h6 class="mx-auto my-auto">Icon</h6>
+                    <h4 class="mx-auto my-auto">$0.0053</h4>
+                    <img src="img/icon.png" class="float-right bg-success p-1" style="border-radius:50%;margin-top:-14px;" width="33" height="33">
+                    <p class="mx-auto my-auto mb-2"><img src="html/images/down_arrow.png" width="14" height="14">-0.23%</p>
+                 </li>
+                 </div>
+                 <div class="col-lg-2 d-none d-md-none d-sm-none d-lg-block my-auto text-white font-weight-bold" style="padding-left:0%;" >
+                   <li class="p-2" style="border-radius: 10px;background: linear-gradient(to right,#464b4c 10%,#10d3ed 90%);
+                       line-height:1;">
+                    <h6 class="mx-auto my-auto">Nano</h6>
+                    <h4 class="mx-auto my-auto">$0.0053</h4>
+                    <img src="img/nano.png" class="float-right bg-white" style="border-radius:50%;margin-top:-14px;"  width="33" height="33">
+                    <p class="mx-auto my-auto mb-2"><img src="html/images/down_arrow.png" width="14" height="14">-0.23%</p>
+                 </li>
+                 </div>
+                </ul> 
+            </div>
+        </div>
+     </div>
+      </div>
+     
+     </div>
+     </div>   
+</section> 
+<section class="py-2">
+      <div class="container">
+          <div class="row">
+              <div class="col">
+                   <h2 class="text-dark font-weight-bold float-left crncytxt">Cryptocurrencies</h2>
+                   <a href="" class="float-right srcusd"> 
+                   <input class="src border border-primary p-1" style="background-color:#ddd;border-radius:5px;" type="search" placeholder="Search coin">
+                   <button  type="button" class="btn btn-secondary usd">USD</button>
+                   </a>
+              </div>
+          </div>
+      </div>
+  </section>
+    <section>
+    <div class="container">
+    <div class="table-responsive">
+     <table id="myDummyTable" class="table tablesorter" >
+      <thead>
+        <tr class="" style="font-size:12px;color:#5d87bd;">
+          <th>#</th>
+          <th></th>
+            <th>NAME<span><i class="fa fa-angle-up" style="cursor:pointer;" onclick="sortTable()" aria-hidden="true"></i></span></th>
+            <th>CANGE<span><i class="fa fa-angle-up" style="cursor:pointer;"aria-hidden="true"></i></span></th>
+            <th>PRICE<span><i class="fa fa-angle-down"  style="cursor:pointer;" aria-hidden="true"></i></span></th>
+            <th>24HOUR CHANGE<span><i class="fa fa-angle-up" style="cursor:pointer;"aria-hidden="true"></i></span></th>
+            <th>GRAPH</th>
+            <th>COIN<span><i class="fa fa-angle-up" style="cursor:pointer;" aria-hidden="true"></i></span></th>
+            <th> MARKET CAP<span><i class="fa fa-angle-down" style="cursor:pointer;"  aria-hidden="true"> </i></span></th>
+        </tr>
+        <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>1</strong></td>
+          <td><img src="img/bitcoin.png" width="40" height="40" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>Bitcoin</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>BTC</strong></p>
+          </td>
+          <td style="color:green;font-size:15px;text-align:left">4.56%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$4221</h5>
+          <p style="color:grey">&#579;1.00000000</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$8642.93</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$8693.34</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"> </td>
+        <td style="color:blue;text-align:left" class="t-hied">20.45 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">125.7 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+        <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>2</strong></td>
+          <td><img src="img/dash.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>DASH</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>DASH</strong></p>
+          </td>
+          <td style="color:green;font-size:15px;text-align:left">0.64%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$3921</h5>
+          <p style="color:grey">&#579;0.3425000</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$0.03834</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$0.03834</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">17.45 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">64.7 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+        <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>3</strong></td>
+          <td><img src="img/nem.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>NEM</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>NEM</strong></p>
+          </td>
+          <td style="color:red;font-size:15px;text-align:left">-0.035%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$0.000032</h5>
+          <p style="color:grey">&#579;0.00450</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$0.00234</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$0.00034</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">2.10 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">5.02 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+         <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>4</strong></td>
+          <td><img src="img/nano.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>NANO</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>NANO</strong></p>
+          </td>
+          <td style="color:red;font-size:15px;text-align:left">-3.24%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$0.003921</h5>
+          <p style="color:grey">&#579;0.0025000</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$0.03834</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$0.00034</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">12 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">42.3 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+         <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>5</strong></td>
+          <td><img src="img/ripple.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>Ripple</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>RPL</strong></p>
+          </td>
+          <td style="color:green;font-size:15px;text-align:left">1.52%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$0.000321</h5>
+          <p style="color:grey">&#579;0.00003100</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$0.02334</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$0.03334</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">1.45 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">4.02 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+         <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>6</strong></td>
+          <td><img src="img/zcash.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>ZCASH</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>ZCASH</strong></p>
+          </td>
+          <td style="color:red;font-size:15px;text-align:left">-0.034%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5><img src="html/images/up_arrow_green.png" width="14" height="14">$0.009501</h5>
+          <p style="color:grey">&#579;0.0005210</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$0.00034</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$0.0000334</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">7.5 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">4.027 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+         <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>7</strong></td>
+          <td><img src="img/tron.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>TRON</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>TRON</strong></p>
+          </td>
+          <td style="color:green;font-size:15px;text-align:left">3.14%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$0.323921</h5>
+          <p style="color:grey">&#579;0.34250</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$1.03834</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$1.03834</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">4.45 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">1.7 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+         <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>8</strong></td>
+          <td><img src="img/cardano.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>Cardano</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>CRD</strong></p>
+          </td>
+          <td style="color:green;font-size:15px;text-align:left">3.64%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$2.00021</h5>
+          <p style="color:grey">&#579;2.3425000</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$4.03834</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$4.03834</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">6 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">10.2 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+         <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>9</strong></td>
+          <td><img src="img/litecoin.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>Litecoin</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>LTC</strong></p>
+          </td>
+          <td style="color:red;font-size:15px;text-align:left">-4.64%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$0.003921</h5>
+          <p style="color:grey">&#579;0.003425000</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$0.009843</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$0.003434</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">2.45 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">4.7 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+        <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>10</strong></td>
+          <td><img src="img/icon.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>Icon</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>ICON</strong></p>
+          </td>
+          <td style="color:red;font-size:15px;text-align:left">-4.64%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$0.003921</h5>
+          <p style="color:grey">&#579;0.003425000</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$0.009843</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$0.003434</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">2.45 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">4.7 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+         <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>11</strong></td>
+          <td><img src="img/nano.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>NANO</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>NANO</strong></p>
+          </td>
+          <td style="color:red;font-size:15px;text-align:left">-3.24%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$0.003921</h5>
+          <p style="color:grey">&#579;0.0025000</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$0.03834</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$0.00034</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">12 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">42.3 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+         <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>12</strong></td>
+          <td><img src="img/ripple.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>Ripple</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>RPL</strong></p>
+          </td>
+          <td style="color:green;font-size:15px;text-align:left">1.52%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$0.000321</h5>
+          <p style="color:grey">&#579;0.00003100</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$0.02334</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$0.03334</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">1.45 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">4.02 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+         <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>13</strong></td>
+          <td><img src="img/zcash.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>ZCASH</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>ZCASH</strong></p>
+          </td>
+          <td style="color:red;font-size:15px;text-align:left">-0.034%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$0.009501</h5>
+          <p style="color:grey">&#579;0.0005210</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$0.00034</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$0.0000334</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">7.5 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">4.027 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+         <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>14</strong></td>
+          <td><img src="img/tron.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>TRON</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>TRON</strong></p>
+          </td>
+          <td style="color:green;font-size:15px;text-align:left">3.14%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$0.323921</h5>
+          <p style="color:grey">&#579;0.34250</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$1.03834</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$1.03834</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">4.45 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">1.7 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+         <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>15</strong></td>
+          <td><img src="img/cardano.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>Cardano</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>CRD</strong></p>
+          </td>
+          <td style="color:green;font-size:15px;text-align:left">3.64%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$2.00021</h5>
+          <p style="color:grey">&#579;2.3425000</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$4.03834</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$4.03834</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">6 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">10.2 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+         <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>16</strong></td>
+          <td><img src="img/litecoin.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>Litecoin</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>LTC</strong></p>
+          </td>
+          <td style="color:red;font-size:15px;text-align:left">-4.64%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$0.003921</h5>
+          <p style="color:grey">&#579;0.003425000</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$0.009843</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$0.003434</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">2.45 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">4.7 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+         <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>17</strong></td>
+          <td><img src="img/nano.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>NANO</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>NANO</strong></p>
+          </td>
+          <td style="color:red;font-size:15px;text-align:left">-3.24%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$0.003921</h5>
+          <p style="color:grey">&#579;0.0025000</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$0.03834</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$0.00034</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">12 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">42.3 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+         <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>18</strong></td>
+          <td><img src="img/ripple.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>Ripple</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>RPL</strong></p>
+          </td>
+          <td style="color:green;font-size:15px;text-align:left">1.52%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$0.000321</h5>
+          <p style="color:grey">&#579;0.00003100</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$0.02334</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$0.03334</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">1.45 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">4.02 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+         <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>19</strong></td>
+          <td><img src="img/zcash.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>ZCASH</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>ZCASH</strong></p>
+          </td>
+          <td style="color:red;font-size:15px;text-align:left">-0.034%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$0.009501</h5>
+          <p style="color:grey">&#579;0.0005210</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$0.00034</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$0.0000334</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">7.5 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">4.027 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+         <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>20</strong></td>
+          <td><img src="img/tron.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>TRON</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>TRON</strong></p>
+          </td>
+          <td style="color:green;font-size:15px;text-align:left">3.14%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$0.323921</h5>
+          <p style="color:grey">&#579;0.34250</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$1.03834</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$1.03834</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">4.45 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">1.7 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+         <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>21</strong></td>
+          <td><img src="img/cardano.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;text-decoration:none;"><strong>Cardano</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>CRD</strong></p>
+          </td>
+          <td style="color:green;font-size:15px;text-align:left">3.64%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$2.00021</h5>
+          <p style="color:grey">&#579;2.3425000</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$4.03834</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$4.03834</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">6 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">10.2 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+         </tr>
+         <tr class="thover">
+          <td style="color:grey; padding:10px;"><strong>22</strong></td>
+          <td><img src="img/litecoin.png" width="30" height="30" style="float:right;margin-top:0px;"></td>
+          <td style="text-align:left;font-size:25px;line-height:0.8em;"><a href="bitcoin.html" style="color:lightblue;"><strong>Litecoin</strong></a>
+          <p style="color:grey;font-size:14px;"><strong>LTC</strong></p>
+          </td>
+          <td style="color:red;font-size:15px;text-align:left">-4.64%</td>
+          <td style="color:blue;font-size:15px; line-height:0em;text-align:left;letter-spacing:1px;">
+          <h5>$0.003921</h5>
+          <p style="color:grey">&#579;0.003425000</p>
+          </td>
+         <td style="color:blue;line-height:0.2em;text-align:left;letter-spacing:1px;" class="t-hied">
+         <p><strong><img src="html/images/up_arrow_green.png" width="14" height="14">$0.009843</strong></p>
+         <p style="line-height:0em;"><strong><img src="html/images/down_arrow_red.png" width="14" height="14">$0.003434</strong></p>
+         </td>
+        <td><img src="html/images/graph.png" width="100" height="40"></td>
+        <td style="color:blue;text-align:left" class="t-hied">2.45 M</td>
+        <td  style="text-align:center;">
+        <p style="color:blue;text-align:center" class="t-hide">4.7 B</p>
+        <span  class="star btnstr" style="text-align:center;"><i class="fas fa-camera fa-x"></i></span>
+        <span  class="star btncmr" style="text-align:center;"><i class="fas fa-star fa-x "></i></span>
+                     
+         </td>
+        </tr>
+      </thead>
+        </table>
+        </div>
+        </div>
+      </section>
+      
+      
+   <section class="py-2">
+      <div class="container">
+          <div class="row">
+              <div class="col text-center">
+                    <a href=""> 
+                   <button type="button" class="btn btn-outline-secondary"><i class="fas fa-angle-double-left"></i>  Previous</button>
+                    <button type="button" class="btn btn-outline-secondary">Next <i class="fas fa-angle-double-right"></i></button>  
+                   </a>
+                  
+              </div>
+          </div>
+      </div>
+</section>
+ 
+<section class="py-2">
+      <div class="container">
+          <div class="row">
+              <div class="col">
+                   <h2 class="text-dark font-weight-bold float-left">NEWS</h2>
+                   <a href="" class="float-right"> 
+                   <button type="button" class="btn btn-secondary">View All</button>
+                   </a>
+              </div>
+          </div>
+      </div>
+</section>
+ <section class="py-5">
+     <div class="container">
+        <div id="myCarouselslide" class="carousel slide" data-ride="carousel">
+       <ol class="carousel-indicators" style="margin-bottom:-30px;">
+          <li data-target="#myCarouselslide" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarouselslide" data-slide-to="1"></li>
+          <li data-target="#myCarouselslide" data-slide-to="2"></li>
+          <li data-target="#myCarouselslide" data-slide-to="0"></li>
+      </ol>
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+         <div class="row">
+             <div class="col-lg-4 col-md-4 col-sm-6 col-12 py-2">
+                 <div class="card border card-hover" style="border-radius:20px;">
+                    <img src="img/news.jpg">
+                     <div class="card-title">
+                        <h2>Jaydip patel</h2> 
+                     </div>
+                     <div class="card-body">
+                    <p class="" style="color:blue">prosecute fraud involving virtual currency and denying the defendants’         motion to dismiss the CFTC’s amended complaint.</p>
+                             <footer class="float-right">
+                                   <p class="text-muted"><strong>16 Dec 2018</strong></p>
+                            </footer>
+                     </div>
+                 </div>
+             </div><br>
+             <div class="col-lg-4 col-md-4 col-sm-6 col-12 py-2 ">
+                 <div class="card">
+                    <img src="img/news.jpg">
+                     <div class="card-title">
+                        <h2>Jaydip patel</h2> 
+                     </div>
+                     <div class="card-body">
+                         <p class="" style="color:blue">prosecute fraud involving virtual currency and denying the defendants’ motion to dismiss the CFTC’s amended complaint.</p>
+                             <footer class="float-right">
+                                   <p class="text-muted"><strong>16 Dec 2018</strong></p>
+                            </footer>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-4 col-md-4 d-sm-none d-md-block col-12 py-2">
+                 <div class="card">
+                    <img src="img/news2.jpg">
+                     <div class="card-title">
+                        <h2>Jaydip patel</h2> 
+                     </div>
+                     <div class="card-body">
+                        <p class="" style="color:blue">prosecute fraud involving virtual currency and denying the defendants’     motion to dismiss the CFTC’s amended complaint.</p>
+                             <footer class="float-right">
+                                   <p class="text-muted"><strong>16 Dec 2018</strong></p>
+                            </footer>
+                     </div>
+                 </div>
+             </div>
+            </div>
+            </div>
+             <div class="carousel-item">
+           <div class="row">
+             <div class="col-lg-4 col-md-4 col-sm-6 col-12 py-2">
+                 <div class="card">
+                    <img src="img/news.jpg">
+                     <div class="card-title">
+                        <h2>Jaydip patel</h2> 
+                     </div>
+                     <div class="card-body">
+                    <p class="" style="color:blue">prosecute fraud involving virtual currency and denying the defendants’ motion to dismiss the CFTC’s amended complaint.</p>
+                             <footer class="float-right">
+                                   <p class="text-muted"><strong>16 Dec 2018</strong></p>
+                            </footer>
+                     </div>
+                 </div>
+             </div><br>
+             <div class="col-lg-4 col-md-4 col-sm-6 col-12 py-2">
+                 <div class="card">
+                    <img src="img/news.jpg">
+                     <div class="card-title">
+                        <h2>Jaydip patel</h2> 
+                     </div>
+                     <div class="card-body">
+                         <p class="" style="color:blue">prosecute fraud involving virtual currency and denying the defendants’ motion to dismiss the CFTC’s amended complaint.</p>
+                             <footer class="float-right">
+                                   <p class="text-muted"><strong>16 Dec 2018</strong></p>
+                            </footer>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-4 col-md-4 d-sm-none d-md-block col-12 py-2">
+                 <div class="card">
+                    <img src="img/news2.jpg">
+                     <div class="card-title">
+                        <h2>Jaydip patel</h2> 
+                     </div>
+                     <div class="card-body">
+                        <p class="" style="color:blue">prosecute fraud involving virtual currency and denying the defendants’     motion to dismiss the CFTC’s amended complaint.</p>
+                             <footer class="float-right">
+                                   <p class="text-muted"><strong>16 Dec 2018</strong></p>
+                            </footer>
+                     </div>
+                 </div>
+             </div>
+            </div>
+            </div>
+             <div class="carousel-item ">
+            <div class="row">
+             <div class="col-lg-4 col-md-4 col-sm-6 col-12 py-2">
+                 <div class="card">
+                    <img src="img/news.jpg">
+                     <div class="card-title">
+                        <h2>Jaydip patel</h2> 
+                     </div>
+                     <div class="card-body">
+                    <p class="" style="color:blue">prosecute fraud involving virtual currency and denying the defendants’ motion to dismiss the CFTC’s amended complaint.</p>
+                             <footer class="float-right">
+                                   <p class="text-muted"><strong>16 Dec 2018</strong></p>
+                            </footer>
+                     </div>
+                 </div>
+             </div><br>
+             <div class="col-lg-4 col-md-4 col-sm-6 col-12 py-2">
+                 <div class="card">
+                    <img src="img/news.jpg">
+                     <div class="card-title">
+                        <h2>Jaydip patel</h2> 
+                     </div>
+                     <div class="card-body">
+                         <p class="" style="color:blue">prosecute fraud involving virtual currency and denying the defendants’ motion to dismiss the CFTC’s amended complaint.</p>
+                             <footer class="float-right">
+                                   <p class="text-muted"><strong>16 Dec 2018</strong></p>
+                            </footer>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-4 col-md-4 d-sm-none d-md-block col-12 py-2">
+                 <div class="card">
+                    <img src="img/news2.jpg">
+                     <div class="card-title">
+                        <h2>Jaydip patel</h2> 
+                     </div>
+                     <div class="card-body">
+                        <p class="" style="color:blue">prosecute fraud involving virtual currency and denying the defendants’     motion to dismiss the CFTC’s amended complaint.</p>
+                             <footer class="float-right">
+                                   <p class="text-muted"><strong>16 Dec 2018</strong></p>
+                            </footer>
+                     </div>
+                 </div>
+             </div>
+            </div>
+            </div>
+        <div class="carousel-item">
+         <div class="row">
+             <div class="col-lg-4 col-md-4 col-sm-6 col-12 py-2">
+                 <div class="card">
+                    <img src="img/news.jpg">
+                     <div class="card-title">
+                        <h2>Jaydip patel</h2> 
+                     </div>
+                     <div class="card-body">
+                    <p class="" style="color:blue">prosecute fraud involving virtual currency and denying the defendants’ motion to dismiss the CFTC’s amended complaint.</p>
+                             <footer class="float-right">
+                                   <p class="text-muted"><strong>16 Dec 2018</strong></p>
+                            </footer>
+                     </div>
+                 </div>
+             </div><br>
+             <div class="col-lg-4 col-md-4 col-sm-6 col-12 py-2">
+                 <div class="card">
+                    <img src="img/news.jpg">
+                     <div class="card-title">
+                        <h2>Jaydip patel</h2> 
+                     </div>
+                     <div class="card-body">
+                         <p class="" style="color:blue">prosecute fraud involving virtual currency and denying the defendants’ motion to dismiss the CFTC’s amended complaint.</p>
+                             <footer class="float-right">
+                                   <p class="text-muted"><strong>16 Dec 2018</strong></p>
+                            </footer>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-4 col-md-4 d-sm-none d-md-block col-12 py-2">
+                 <div class="card">
+                    <img src="img/news2.jpg">
+                     <div class="card-title">
+                        <h2>Jaydip patel</h2> 
+                     </div>
+                     <div class="card-body">
+                        <p class="" style="color:blue">prosecute fraud involving virtual currency and denying the defendants’     motion to dismiss the CFTC’s amended complaint.</p>
+                             <footer class="float-right">
+                                   <p class="text-muted"><strong>16 Dec 2018</strong></p>
+                            </footer>
+                     </div>
+                 </div>
+             </div>
+            </div>
+            </div>
+            </div>
+         </div>
+     </div>
+ </section>
+  
+    
+ <footer class="mt-5">
+    <div class="container-fluid mt-5 " style="background-color:#eee;">
+        <div class="row">
+        <div class="col col-md-8">
+        <div class="row">
+            <div class="col-6 col-md-3 col-sm-3 col-lg-3 mt-5">
+                <div class="footer-logo" style="line-style:none;"><img src="img/logo.jpg" alt="logo"width="160" height="auto"></div>
+                <ul class="footer-links list-unstyled">
+                    <li><a href=" "style="text-decoration:none;">About</a></li>
+                    <li><a href=" "style="text-decoration:none;">Contact</a></li>
+                    <li><a href=" "style="text-decoration:none;">Advertise</a> </li>
+                    <li><a href=" "style="text-decoration:none;">Hire Experts</a></li>
+                    <li><a href=" "style="text-decoration:none;">Terms of Use</a></li>
+                    <li><a href=" "style="text-decoration:none;">Privacy Policy</a></li>
+                    
+                </ul>
+            </div>
+            <div class="col-6 col-md-3 col-sm-3 col-lg-3 mt-5">
+                <h4 class="footer-link-title">Cryptocurrency</h4>
+                <ul class="footer-links list-unstyled" >
+                                        <li><a href=" "style="text-decoration:none;">Bitcoin </a></li>
+                                        <li><a href=" "style="text-decoration:none;">Ripple </a></li>
+                                        <li><a href=" "style="text-decoration:none;">Ethereum </a></li>
+                                        <li><a href=" "style="text-decoration:none;">Bitcoin Cash </a></li>
+                                        <li><a href=" "style="text-decoration:none;">EOS </a></li>
+                                        <li><a href=" "style="text-decoration:none;" class="footer-link-title">Submit Coin</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md-3 col-sm-3 col-lg-3 mt-5">
+                <h4 class="footer-link-title">ICOs</h4>
+                <ul class="footer-links list-unstyled">
+                                        <li><a href=" "style="text-decoration:none;">ACA Network</a></li>
+                                        <li><a href=" "style="text-decoration:none;">AgroTechFarm</a></li>
+                                        <li><a href=" "style="text-decoration:none;">Zeon Network</a></li>
+                                        <li><a href=" "style="text-decoration:none;">CRYSTALS</a></li>
+                                        <li><a href=" "style="text-decoration:none;">Coin Analyst</a></li>
+                                        <li><a href=" "style="text-decoration:none;" class="footer-link-title">Submit ICO</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md-3 col-sm-3 col-lg-3 mt-5">
+               <h4 class="footer-link-title">Airdrops</h4>
+                <ul class="footer-links list-unstyled">
+                                        <li><a href=" "style="text-decoration:none;">Tachain</a></li>
+                                        <li><a href=" "style="text-decoration:none;">imusify</a></li>
+                                        <li><a href=" "style="text-decoration:none;">Bidooh</a></li>
+                                        <li><a href=" "style="text-decoration:none;">Spiking</a></li>
+                                        <li><a href=" "style="text-decoration:none;">Efforce</a></li>
+                                        <li><a href=" "style="text-decoration:none;" class="footer-link-title">Submit Airdrop</a></li>
+                </ul>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6 footer-row">
+                <div class="footer-newsletter">
+                    <h4 class="footer-link-title text-primary">Newsletter</h4>
+
+                    <form ><input name="_token" type="hidden"  >                        <div class="form-inline text-left">
+                        <div class="input-group">
+                            <input placeholder="Your Email" class="form-control" id="subscribe_email" data-msg="Please enter your email address" data-rule="email" name="subscribe_email" type="email" value="">                            <span class="input-group-btn">
+                                <button  type="submit" id="news"  class="btn btn-primary"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                            </span>
+                        </div>
+
+                      </div>
+                    <div class="ct2" id="subscribeerrormessagefooter"></div>
+                </form>              
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <h4 class="footer-link-title pull-left footer-download">Download</h4>
+                </div>
+                </div>
+                <div class="footer-app-icon pull-left">
+                    
+                    <a href=" "style="text-decoration:none;"><img style="max-height: 50px; height: 46px !important;" height="50px" width="150px" class="footer-android" src="img/android_app_icon.png"></a>
+                    
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <h4 class="footer-link-title pull-left footer-download">&nbsp;</h4>
+                </div>
+                </div>
+                <div class="footer-app-icon pull-left">
+                    
+                    <a href=" "><img style="max-height: 50px; height: 46px !important;" width="150px" height="50px" class="footer-ios" src="img/ios_app_icon.png"></a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4">
+            </div>
+        
+        </div>
+        </div>
+        <div class="col-xs-12 col-md-4 mt-5" style="line-height: 1em;">
+                <div class="">
+                    <h4 class="footer-link-title">Crypto news & updates</h4>  
+                </div>
+                <div class="row">
+                        <div class="col-12 col-md-12 col-sm-12 footer-text  mt-3">
+                        <div class="row">
+                            <a href=" ">
+                            <div class="col-3 col-md-3 col-sm-3 pull-left">
+                                <img src="img/new-google-update-challenges-cryptojackers-15385526567561.jpg" width="50" height="50">
+
+                            </div>
+                            <div class="col-9 col-md-9 col-sm-9 footer-guide-text">
+                                <p class="col-12">US Federal Court: Cryptocurrencies to be treated as commodit...</p>
+                                <span class="footer-news-date text-muted font-waight-bold col-9 float-right" style="font-size:14px;">October 03,2018</span>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 footer-text">
+                        <div class="row">
+                            <a href=" ">
+                            <div class="col-3 col-md-3 col-sm-3 pull-left">
+                                <img src="img/coinbase-gets-an-investment-boost-of-500-million-from-tiger-global-valuation-increases-to-8-billion-15385981723678.png"width="50" height="50">
+                            </div>
+                            <div class="col-9 col-md-9 col-sm-9 footer-guide-text">
+                                <p class="col-12">Coinbase Gets an Investment Boost of $500 Million from Tiger...</p>
+                                <span class="footer-news-date text-muted font-waight-bold col-9 float-right" style="font-size:14px;">October 03, 2018</span>
+                            </div>
+                            </a>
+                        </div>
+                    </div>              
+                    <div class="col-12 col-md-12 col-sm-12 footer-text">
+                        <div class="row">
+                            <a href=" ">
+                            <div class="col-3 col-md-3 col-sm-3 pull-left">
+                                <img src="img/us-federal-court-cryptocurrencies-to-be-treated-as-commodities-15387446239784.jpg"width="50" height="50">
+
+                            </div>
+                            <div class="col-9 col-md-9 col-sm-9">
+                                <p class="col-12">New Google Update Challenges Cryptojackers</p>
+                                <span class="footer-news-date text-muted font-waight-bold col-9 float-right" style="font-size:14px;">October 03, 2018</span>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                   </div>
+                
+            </div>
+        </div>
+        </div>
+       
+   
+    
+  <div class="footer-bottom">
+        <div class="container-fluid py-3 justify-content-around text-center" style="background-color:#ccc;">
+            <div class="row">
+                <div class="col-12 col-md-12 footer-text-bottom">
+                    <div class="row">
+                    <span class="col-12 col-md-4 col-sm-4 font-waight-bold"><p>© Copyright 2018. All Rights Reserved.</p></span>
+                    <span class="col-12 col-md-4  col-sm-4 font-waight-bold"><p>Made with <i class="fa fa-heart text-danger" aria-hidden="true"></i> for the  CodeCrunch TechLabs.</p></span>
+                    <span class="col-12 col-md-4 col-sm-4 footer-links-icon" >
+                        <p><a href=" "><i class="fa fa-facebook fb fa-2x"></i></a>
+                        &nbsp;&nbsp;<a href=" "><i class="fa fa-google-plus fa-2x gp"></i></a>
+                        &nbsp;&nbsp;<a href=" "><i class="fa fa-twitter fa-2x twitter"></i></a>
+                        &nbsp;&nbsp;<a href=" "><i class="fa fa-instagram fa-2x insta"></i></a>
+                        &nbsp;&nbsp;<a href=" "  ><i class="fa fa-telegram fa-2x tel"></i></a>
+                        &nbsp;&nbsp;<a href=" "  ><i class="fa fa-youtube-play fa-2x youtube"></i></a></p>
+                    </span>
+                    </div>
+                </div>
+    
+                
+            </div>
+        </div>
+    </div>
+  
+     
+      </footer> 
+      
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

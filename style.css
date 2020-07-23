@@ -1,0 +1,96 @@
+body{
+    overflow-x: hidden;
+}
+.jaydip{
+    display: inline-block;
+    overflow-x: hidden;
+}
+ .gcontainer {
+   width:100%;  
+  display: grid;
+  align-content: center;
+  grid-template-columns: auto auto auto auto auto auto;
+  grid-gap: 10px;   
+}
+.gcontainer > div {
+      text-align: center;
+      padding: 20px 0;
+      border-radius: 10px;
+      background-color: darkgrey;
+      height: 80px;
+      overflow: hidden;
+      width: 100%;
+}
+ 
+.coin-name{
+    color: white;
+    text-align: left;
+    margin-top: -10px;
+    clear: both;
+    margin-left: 10px;
+}
+.p{
+    color: white;
+    float: left;
+    margin-top: -15px;
+    margin-left: 10px;
+    clear: both;
+    font-size: 20px;
+}
+.p1{
+    color: white;
+    float: left;
+    margin-top: 5px;
+    padding: 0px;
+    margin-left: -75px;
+}
+.coin-icon{
+    float: right;
+    margin-right: 7px;
+    margin-top: 0px;
+    background-color:#eee;
+    border-radius: 16px;
+}
+@media (min-width: 576px) { 
+}
+@media (min-width: 768px) {
+   
+} 
+@media (min-width: 992px) {
+    
+} 
+@media (min-width: 1200px) {
+     
+}
+@media (max-width: 760px) {
+    .hidd{
+        display: none;
+    }
+    .boxa{
+        display: none;
+    }
+    #box2{
+        width: 100%;
+    }
+    .gcontainer {
+        width:100%;  
+          display: grid;
+          align-content: center;
+          grid-template-columns: auto auto;
+    }
+    .gcontainer > div {
+      
+      overflow: hidden;
+      width: 100%;
+   }
+    .src{
+        width: 100%;
+    }
+    .src1{
+        width:60%;
+    }
+    .usd{
+        width: 35%;
+    }
+}
+
